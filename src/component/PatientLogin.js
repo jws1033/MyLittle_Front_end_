@@ -28,13 +28,14 @@ class PatientLogin extends Component {
 
     const accounts = await web3.eth.getAccounts();
 
-    if (this.state.eth_account === accounts) {
+    if (this.state.eth_account == accounts) {
       try {
         // console.log(account);
         sessionStorage.setItem("account", accounts[0]);
       } catch (e) {
         console.log("error" + e);
       }
+      window.location.href = "/MainPage";
     } else {
       alert(
         "유효하지 않은 계정입니다. 현재 블록체인 네트워크에 연결된 계정을 입력하세요!"
@@ -48,7 +49,7 @@ class PatientLogin extends Component {
       <div className="login-section">
         <div className="header">
           <h1>Login</h1>
-          <h2>로그인</h2>
+          <h2>로그인하세요!</h2>
           <hr></hr>
         </div>
         <Form className="login-form" onSubmit={this.onSubmit}>
@@ -63,9 +64,8 @@ class PatientLogin extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick="">
-            제출
-            {/* 로그인 완료시 MainPage로 이동 */}
+          <Button variant="primary" type="submit">
+            Submit
           </Button>
         </Form>
       </div>
