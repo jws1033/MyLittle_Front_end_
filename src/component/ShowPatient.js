@@ -4,6 +4,7 @@ import { Button, Form, Card } from "react-bootstrap";
 import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
+import { ShowPatient } from ".";
 
 class ShowStudent extends Component {
   constructor(props) {
@@ -123,4 +124,4 @@ class ShowStudent extends Component {
   }
 }
 
-export default ShowStudent;
+export default ShowPatient;

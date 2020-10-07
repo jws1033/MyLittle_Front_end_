@@ -75,7 +75,7 @@ class MainPage extends Component {
     return (
       <div>
         <div>
-          <nav className="navbar navbar-middle">
+          <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -84,7 +84,7 @@ class MainPage extends Component {
                   data-toggle="collapse"
                   data-target="#bs-example-navbar-collapse-1"
                 >
-                  <span className="sr-only">Toggle navigation</span>
+                  <span className="sr-only">Toggle</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
@@ -105,6 +105,9 @@ class MainPage extends Component {
                 </ul>
 
                 <ul className="nav navbar-nav navbar-right">
+                <li>
+                  <a href="/MainPage">홈</a>
+                </li>
                   <li>
                     <a>
                       <strong>{sessionStorage.getItem("account")}</strong>님
@@ -120,6 +123,7 @@ class MainPage extends Component {
           </nav>
         </div>
 
+        
         <div className="section">
           <div className="header">
             <h2>Main Home Page</h2>

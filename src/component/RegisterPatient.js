@@ -73,42 +73,55 @@ class registerPatient extends Component {
 
   render() {
     return (
-      <div>
         <div>
-          <nav className="navbar navbar-middle">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <a className="navbar-brand" href="/Reword">
-                  리워드
-                </a>
+          <div>
+            <nav className="navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                  <button
+                    type="button"
+                    className="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                  >
+                    <span className="sr-only">Toggle</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                  </button>
+                  <a className="navbar-brand" href="/Reword">
+                    리워드
+                  </a>
+                </div>
+  
+                <div
+                  className="collapse navbar-collapse"
+                  id="bs-example-navbar-collapse-1"
+                >
+                  <ul className="nav navbar-nav">
+                    <li>
+                      <a href="/registerPatient">문진기록표</a>
+                    </li>
+                  </ul>
+  
+                  <ul className="nav navbar-nav navbar-right">
+                  <li>
+                    <a href="/MainPage">홈</a>
+                  </li>
+                    <li>
+                      <a>
+                        <strong>{sessionStorage.getItem("account")}</strong>님
+                        반갑습니다!
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Logout">로그아웃</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-
-              <div
-                className="collapse navbar-collapse"
-                id="bs-example-navbar-collapse-1"
-              >
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/registerPatient">문진기록표</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <a>
-                      <strong>{sessionStorage.getItem("account")}</strong>님
-                      반갑습니다!
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/logout">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-
+            </nav>
+          </div>
         <div className="section">
           <div className="header">
             <h2>신체 정보를 등록합니다</h2>

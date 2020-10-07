@@ -47,8 +47,8 @@ class Reword extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="/FindStudent">
-                  학생찾기
+                <a className="navbar-brand" href="/Reword">
+                  리워드
                 </a>
               </div>
 
@@ -58,11 +58,15 @@ class Reword extends Component {
               >
                 <ul className="nav navbar-nav">
                   <li>
-                    <a href="/registerTutor">선생님 등록하기</a>
+                    <a href="/registerPatient">문진기록표</a>
                   </li>
                 </ul>
 
                 <ul className="nav navbar-nav navbar-right">
+                  
+                  <li>
+                    <a href="/MainPage">홈</a>
+                  </li>
                   <li>
                     <a>
                       <strong>{sessionStorage.getItem("account")}</strong>님
@@ -79,60 +83,12 @@ class Reword extends Component {
         </div>
         <div class="find-section">
           <div class="header">
-            <h1>블록체인에 등록되어있는 학생을 찾아보아요!</h1>
+            <h1>Total Reword</h1>
+            <h2>888</h2>
             <hr></hr>
           </div>
-          <Form class="find-form" onSubmit={this.onSubmit} inline>
-            <Form.Label
-              className="my-1 mr-2"
-              htmlFor="inlineFormCustomSelectPref"
-            >
-              과목
-            </Form.Label>
-            <Form.Control
-              as="select"
-              className="my-1 mr-sm-2"
-              id="inlineFormCustomSelectPref"
-              name="subject"
-              onChange={this.handleChange}
-              custom
-            >
-              <option value="">과목선택</option>
-              <option value="korean">korean</option>
-              <option value="math">math</option>
-              <option value="english">english</option>
-            </Form.Control>
-
-            <br></br>
-            <br></br>
-
-            <Form.Label
-              className="my-1 mr-2"
-              htmlFor="inlineFormCustomSelectPref"
-            >
-              학생 성별
-            </Form.Label>
-            <Form.Control
-              as="select"
-              className="my-1 mr-sm-2"
-              id="inlineFormCustomSelectPref"
-              name="gender"
-              onChange={this.handleChange}
-              custom
-            >
-              <option value="">학생 성별</option>
-              <option value="male">male</option>
-              <option value="female">female</option>
-            </Form.Control>
-            <br></br>
-            <br></br>
-
-            <Button type="submit" className="my-1">
-              학생 찾기
-            </Button>
-          </Form>
+          </div>
         </div>
-      </div>
     );
   }
 }
