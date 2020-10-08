@@ -63,7 +63,6 @@ class Reword extends Component {
                 </ul>
 
                 <ul className="nav navbar-nav navbar-right">
-                  
                   <li>
                     <a href="/MainPage">홈</a>
                   </li>
@@ -87,8 +86,8 @@ class Reword extends Component {
             <h2>888</h2>
             <hr></hr>
           </div>
-          </div>
         </div>
+      </div>
     );
   }
 }

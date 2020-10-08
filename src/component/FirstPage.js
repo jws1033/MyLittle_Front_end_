@@ -15,7 +15,7 @@ const FirstPage = ({ history }) => {
           <h1>마이 리틀 닥터</h1>입니다
         </h3>
         <br></br>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="LogoMLD.png" className="App-logo" alt="logo" />
         <br></br>
 
         <Button
