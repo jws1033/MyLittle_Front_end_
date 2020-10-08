@@ -58,7 +58,7 @@ class Reword extends Component {
               >
                 <ul className="nav navbar-nav">
                   <li>
-                    <a href="/registerPatient">문진기록표</a>
+                    <a href="/RegisterPatient">문진기록표</a>
                   </li>
                 </ul>
 

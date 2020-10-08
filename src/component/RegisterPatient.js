@@ -64,7 +64,7 @@ class registerPatient extends Component {
           from: account,
         });
       alert("등록되었습니다!");
-      window.location.href = "/registerPatient";
+      window.location.href = "/RegisterPatient";
     } else {
       alert("로그인 먼저 해 주세요!");
       window.location.href = "/PatientLogin";
@@ -166,6 +166,7 @@ class registerPatient extends Component {
               className="newitem-form"
               placeholder="키를 입력해 주세요"
             ></input>
+            <br></br>
             <input
               type="text"
               className="newitem-form"

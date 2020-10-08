@@ -52,7 +52,7 @@ class MainPage extends Component {
       this.setState({ ipfsHash: ipfsHash[0].hash });
 
       const transactionHash = await storehash.methods
-        .registerPatient(
+        .RegisterPatient(
           this.state.name,
           this.state.gender,
           this.state.age,
@@ -100,7 +100,7 @@ class MainPage extends Component {
               >
                 <ul className="nav navbar-nav">
                   <li>
-                    <a href="/registerPatient">문진기록표</a>
+                    <a href="/RegisterPatient">문진기록표</a>
                   </li>
                 </ul>
 
@@ -123,13 +123,18 @@ class MainPage extends Component {
           </nav>
         </div>
 
-        
+
         <div className="section">
           <div className="header">
-            <h2>Main Home Page</h2>
+            <h2 style={{color: "white", fontFamily: "NanumSquareRound"}}>반갑습니다</h2>
+            <h4 style={{color: "white", fontFamily: "NanumSquareRound"}}>마이 리틀 닥터는 여러분의 건강을 매일 체크해 주고, 
+              스스로 문진하는 형식의 의료 스몰 데이터 수집 어플리케이션으로써 <br></br>
+              여러분의 소중한 데이터를 제공해 주시면 토큰 리워드를
+              지급해 주는 블록체인 의료 문진 사이트입니다.</h4>
           </div>
         </div>
       </div>
+
     );
   }
 }
