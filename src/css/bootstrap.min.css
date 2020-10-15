@@ -237,6 +237,7 @@ th {
   }
   .navbar {
     display: none;
+    background-color: transparent;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -4592,12 +4593,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
-.navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-}
+
 .navbar-default .navbar-brand {
-  color: #777;
+  color: #fff;
 }
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {

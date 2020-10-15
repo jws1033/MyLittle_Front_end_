@@ -33,7 +33,6 @@
     "less/mixins/border-radius.less",
     "less/input-groups.less",
     "less/navs.less",
-    "less/navbar.less",
     "less/mixins/nav-vertical-align.less",
     "less/utilities.less",
     "less/breadcrumbs.less",
