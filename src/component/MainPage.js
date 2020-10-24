@@ -89,7 +89,7 @@ class MainPage extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="/Reword">
+                <a className="navbar-brand" href="/Reward">
                   리워드
                 </a>
               </div>

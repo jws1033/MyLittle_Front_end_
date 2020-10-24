@@ -6,7 +6,7 @@ import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
 
-class Reword extends Component {
+class Reward extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +47,7 @@ class Reword extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="/Reword">
+                <a className="navbar-brand" href="/Reward">
                   리워드
                 </a>
               </div>
@@ -92,4 +92,4 @@ class Reword extends Component {
   }
 }
 
-export default Reword;
+export default Reward;

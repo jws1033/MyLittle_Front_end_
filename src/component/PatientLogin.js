@@ -49,25 +49,27 @@ class PatientLogin extends Component {
       <div className="login-section">
         <div className="header">
           <h1>Login</h1>
-          <h2>로그인하세요!</h2>
+          {/* <h2>로그인하세요!</h2> */}
           <hr></hr>
         </div>
-        <Form className="login-form" onSubmit={this.onSubmit}>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>이더리움 계좌로 로그인</Form.Label>
+        <div style={{ maxWidth: 680, margin: "auto" }}>
+          <Form className="login-form" onSubmit={this.onSubmit}>
+            <Form.Group controlId="formBasicEmail">
+              <div>
+                <Form.Control
+                  type="text"
+                  placeholder=" 현재 이더리움 네트워크에 연결된 계좌를 입력하세요"
+                  value={this.state.eth_account}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </Form.Group>
 
-            <Form.Control
-              type="text"
-              placeholder=" 현재 이더리움 네트워크에 연결된 계좌를 입력하세요"
-              value={this.state.eth_account}
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
+            <Button variant="primary" type="submit" className="my-button">
+              로그인
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }
