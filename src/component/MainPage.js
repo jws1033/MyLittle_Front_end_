@@ -75,7 +75,7 @@ class MainPage extends Component {
     return (
       <div>
         <div>
-          <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -89,8 +89,8 @@ class MainPage extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="/Reward">
-                  리워드
+                <a className="navbar-brand" href="/MainPage">
+                  My Little Doctor
                 </a>
               </div>
 
@@ -100,13 +100,19 @@ class MainPage extends Component {
               >
                 <ul className="nav navbar-nav">
                   <li>
-                    <a href="/RegisterPatient">문진기록표</a>
+                    <a href="/Reward">리워드</a>
+                  </li>
+                </ul>
+
+                <ul className="nav navbar-nav">
+                  <li>
+                    <a href="/List">문진기록표</a>
                   </li>
                 </ul>
 
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a href="/MainPage">홈</a>
+                    <a href="/registerPatient">문진하기</a>
                   </li>
                   <li>
                     <a>

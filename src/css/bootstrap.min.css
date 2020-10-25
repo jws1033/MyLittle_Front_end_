@@ -4371,6 +4371,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
+  background-image: url("public\LogoMLD.png");
   float: left;
   height: 50px;
   padding: 15px 15px;

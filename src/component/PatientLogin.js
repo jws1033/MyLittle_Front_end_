@@ -46,17 +46,18 @@ class PatientLogin extends Component {
 
   render() {
     return (
-      <div className="login-section">
+      <div className="section" style={{ backgroundColor: "white"}}>
         <div className="header">
           <h1>Login</h1>
           {/* <h2>로그인하세요!</h2> */}
           <hr></hr>
         </div>
-        <div style={{ maxWidth: 680, margin: "auto" }}>
+        <div style={{ maxWidth: 680, margin: "auto"}}>
           <Form className="login-form" onSubmit={this.onSubmit}>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group className="formBasicEmail" style={{ backgroundColor: "white"}}>
               <div>
                 <Form.Control
+                  style={{ backgroundColor: "white"}}
                   type="text"
                   placeholder=" 현재 이더리움 네트워크에 연결된 계좌를 입력하세요"
                   value={this.state.eth_account}
