@@ -9,7 +9,14 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 10s linear;
+    /* animation: App-logo-spin infinite s linear; */
+    width: 1000px;
+    height: 350px;
+  }
+
+  #App-logo a:hover {
+    /* animation: App-logo-spin infinite s linear; */
+    /* background: url('C:\Users\18\Desktop\MLD\src\images\LogoMLD_ico.png'); */
   }
 }
 
@@ -19,7 +26,7 @@
       rgba(46, 0, 173, 0.5),
       rgba(13, 57, 253, 0.5)
     ),
-    url(images/stethoscope-3541909.jpg);
+    url(https://image.freepik.com/free-photo/white-wooden-textures_74190-6906.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -90,7 +90,10 @@ class MainPage extends Component {
                   <span className="icon-bar"></span>
                 </button>
                 <a className="navbar-brand" href="/MainPage">
-                  My Little Doctor
+                  <div id="logo">
+                    {/* <img src="src\images\LogoMLD.ico" /> */}
+                    My Little Doctor
+                  </div>
                 </a>
               </div>
 
@@ -112,7 +115,7 @@ class MainPage extends Component {
 
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a href="/registerPatient">문진하기</a>
+                  <a href="/MyPage">마이페이지</a>
                   </li>
                   <li>
                     <a>

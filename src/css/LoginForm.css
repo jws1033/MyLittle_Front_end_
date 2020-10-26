@@ -6,9 +6,16 @@
   box-sizing: border-box;
 }
 body {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, #6fa7e7 10%, #801bf3 90%);
+  background: linear-gradient(
+      to left,
+      rgba(46, 0, 173, 0.55),
+      rgba(13, 57, 253, 0.55)
+    ),
+    url(https://image.freepik.com/free-photo/white-wooden-textures_74190-6906.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 

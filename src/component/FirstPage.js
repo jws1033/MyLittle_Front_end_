@@ -15,12 +15,8 @@ const FirstPage = ({ history }) => {
           <h4>Medical small data collection site in the form of self-inquiry</h4>
         </h3>
         <br></br>
-        <img src="LogoMLD.png" className="App-logo" alt="logo" />
+        <a href="/PatientLogin"><img src="LogoMLD.png" className="App-logo" alt="logo" /></a>
         <br></br>
-
-        <Button variant="primary" type="submit" className="my-button">
-          로그인
-        </Button>
       </header>
     </div>
   );

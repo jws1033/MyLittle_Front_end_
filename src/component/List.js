@@ -70,7 +70,7 @@ class List extends Component {
 
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a href="/registerPatient">문진하기</a>
+                    <a href="/registerPatient">마이페이지</a>
                   </li>
                   <li>
                     <a>
