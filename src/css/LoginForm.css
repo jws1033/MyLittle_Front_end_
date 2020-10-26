@@ -8,10 +8,10 @@
 body {
   background: linear-gradient(
       to left,
-      rgba(46, 0, 173, 0.55),
-      rgba(13, 57, 253, 0.55)
+      rgba(150, 150, 150, 0.55),
+      rgba(53, 53, 53, 0.55)
     ),
-    url(https://image.freepik.com/free-photo/white-wooden-textures_74190-6906.jpg);
+    url(https://images.pexels.com/photos/2440024/pexels-photo-2440024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
