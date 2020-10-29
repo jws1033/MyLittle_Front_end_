@@ -7,6 +7,8 @@ import MainPage from "./component/MainPage";
 import Logout from "./component/Logout";
 import FirstPage from "./component/FirstPage";
 import PatientLogin from "./component/PatientLogin";
+
+import MyOwnPage from "./component/MyOwnPage";
 import MyPage from "./component/MyPage";
 import List from "./component/List";
 import Reward from "./component/Reward";
@@ -16,6 +18,8 @@ const App = () => {
   return (
     <div>
       <Route exact path="/" component={FirstPage} />
+      
+      <Route path="/MyOwnPage" component={MyOwnPage} />
       <Route path="/Logout" component={Logout} />
       <Route path="/MainPage" component={MainPage} />
       <Route path="/PatientLogin" component={PatientLogin} />

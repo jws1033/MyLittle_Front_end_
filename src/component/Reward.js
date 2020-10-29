@@ -86,11 +86,10 @@ class Reward extends Component {
             </div>
           </nav>
         </div>
-        <div class="find-section">
+        <div class="section" style={{ marginTop: "80px" }}>
           <div class="header">
-            <h1>Total Reword</h1>
-            <h2>888</h2>
-            <hr></hr>
+            <h1 style={{ color : "white" }}>Total Reword</h1>
+            <h2 style={{ color : "white" }}>888</h2>
           </div>
         </div>
       </div>

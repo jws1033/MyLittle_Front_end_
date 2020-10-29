@@ -128,7 +128,7 @@ class MyPage extends Component {
             </div>
           </nav>
         </div>
-        <div className="section">
+        <div className="section" style={{ marginTop : " 80px" }}>
           <div className="header">
             <h2 style={{ color: "white" }}>신체 정보를 등록합니다</h2>
           </div>

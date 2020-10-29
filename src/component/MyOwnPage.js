@@ -5,7 +5,7 @@ import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
 
-class MainPage extends Component {
+class MyOwnPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,8 +52,8 @@ class MainPage extends Component {
       this.setState({ ipfsHash: ipfsHash[0].hash });
 
       const transactionHash = await storehash.methods
-        .RegisterPatient(
-          this.state.name,
+        .registerPatient(
+          this.state.city,
           this.state.gender,
           this.state.age,
           this.state.hight,
@@ -75,7 +75,7 @@ class MainPage extends Component {
     return (
       <div>
         <div>
-        <nav className="navbar navbar-default">
+          <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -90,10 +90,7 @@ class MainPage extends Component {
                   <span className="icon-bar"></span>
                 </button>
                 <a className="navbar-brand" href="/MainPage">
-                  <div id="logo">
-                    <img src={`${process.env.PUBLIC_URL}/LogoMLD.ico`} width="40px" height="40px"  />
-                    {/* My Little Doctor */}
-                  </div>
+                  My Little Doctor
                 </a>
               </div>
 
@@ -101,7 +98,7 @@ class MainPage extends Component {
                 className="collapse navbar-collapse"
                 id="bs-example-navbar-collapse-1"
               >
-                <ul className="nav navbar-nav" >
+                <ul className="nav navbar-nav">
                   <li>
                     <a href="/Reward">리워드</a>
                   </li>
@@ -115,7 +112,7 @@ class MainPage extends Component {
 
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                  <a href="/MyPage">마이페이지</a>
+                    <a href="/MyPage">마이페이지</a>
                   </li>
                   <li>
                     <a>
@@ -131,23 +128,66 @@ class MainPage extends Component {
             </div>
           </nav>
         </div>
-
-        <div className="section" style={{ marginTop: "80px" }}>
+        <div className="section" style={{ marginTop : " 80px", backgroundColor:"rgba(150, 150, 150, 0.2)" }}>
           <div className="header">
-            <h2 style={{ color: "white", fontFamily: "NanumSquareRound" }}>
-              반갑습니다
-            </h2>
-            <h4 style={{ color: "white", fontFamily: "NanumSquareRound" }}>
-              마이 리틀 닥터는 여러분의 건강을 매일 체크해 주고, 스스로 문진하는
-              형식의 의료 스몰 데이터 수집 어플리케이션으로써 <br></br>
-              여러분의 소중한 데이터를 제공해 주시면 토큰 리워드를 지급해 주는
-              블록체인 의료 문진 사이트입니다.
-            </h4>
+            <h2 style={{ color: "white" }}>My Info</h2>
           </div>
+          <form onSubmit={this.handleSubmit} margin="auto" padding="auto">
+            <div style={{ color: " white " , fontSize: " 20px "}}>
+                성별 :<input type="value" value={this.state.gender}/ >
+            </div>
+            <br></br>
+            <div style={{ color: " white " , fontSize: " 20px "}}>
+                나이 :<input type="value" value={this.state.age} />
+            </div>
+            <br></br>
+            <div style={{ color: " white " , fontSize: " 20px "}}>
+                거주지 :<input type="value" value={this.state.city} />
+            </div>
+            {/* <input
+              type="text"
+              className="newitem-form"
+              name="age"
+              placeholder="나이를 입력해 주세요"
+              onChange={this.handleChange}
+            />{" "} */}
+            <br></br>
+            <div style={{ color: " white " , fontSize: " 20px "}}>
+                키 :<input type="value" value={this.state.height} />
+            </div>
+            {/* <input
+              type="text"
+              className="newitem-form"
+              name="residence"
+              placeholder="거주지를 입력해 주세요"
+              onChange={this.handleChange}
+            />{" "} */}
+            <br></br>
+            <div style={{ color: " white " , fontSize: " 20px "}}>
+                몸무게:<input type="value" value={this.state.weight} />
+            </div>
+            {/* <input
+              type="text"
+              className="newitem-form"
+              placeholder="키를 입력해 주세요"
+            ></input>
+            <br></br>
+            <input
+              type="text"
+              className="newitem-form"
+              placeholder="몸무게를 입력해 주세요"
+            ></input> */}
+            <br></br>
+            <input
+              className="btn btn-warning newitem-btn"
+              type="submit"
+              id="register"
+            />
+          </form>
         </div>
       </div>
     );
   }
 }
 
-export default MainPage;
+export default MyOwnPage;
