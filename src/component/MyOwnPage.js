@@ -52,7 +52,7 @@ class MyOwnPage extends Component {
       this.setState({ ipfsHash: ipfsHash[0].hash });
 
       const transactionHash = await storehash.methods
-        .registerPatient(
+        .MyOwnPage(
           this.state.city,
           this.state.gender,
           this.state.age,
@@ -64,7 +64,7 @@ class MyOwnPage extends Component {
           from: account,
         });
       alert("등록되었습니다!");
-      window.location.href = "/RegisterPatient";
+      window.location.href = "/MyOwnPage";
     } else {
       alert("로그인 먼저 해 주세요!");
       window.location.href = "/PatientLogin";

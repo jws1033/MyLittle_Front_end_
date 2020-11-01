@@ -133,14 +133,6 @@ class MyPage extends Component {
             <h2 style={{ color: "white" }}>신체 정보를 등록합니다</h2>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              className="newitem-form"
-              name="name"
-              placeholder="이름을 입력해 주세요"
-              onChange={this.handleChange}
-            />{" "}
-            <br></br>
             <select
               className="newitem-form"
               name="gender"

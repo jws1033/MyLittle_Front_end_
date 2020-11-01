@@ -9,10 +9,11 @@ body {
   background: 
   linear-gradient(
       to top,
-      rgba(150, 150, 150, 0.2),
-      rgba(53, 53, 53, 0.2)
-    ),
-    url(https://images.pexels.com/photos/2440024/pexels-photo-2440024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      rgb(147, 123, 255, 0.8),
+      rgba(177, 189, 255, 0.6 ),
+      rgb(255, 184, 249, 0.5)
+    );
+    /* url(https://images.pexels.com/photos/2440024/pexels-photo-2440024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

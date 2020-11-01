@@ -5,6 +5,8 @@ import { Button, Form } from "react-bootstrap";
 import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
+import Navbar from "./Navbar";
+
 
 class List extends Component {
   constructor(props) {
@@ -33,7 +35,8 @@ class List extends Component {
     return (
       <div>
         <div>
-        <nav className="navbar navbar-default">
+          <Navbar />
+        {/* <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -84,7 +87,7 @@ class List extends Component {
                 </ul>
               </div>
             </div>
-          </nav>
+          </nav> */}
         </div>
         <div class="">
           <div className="">

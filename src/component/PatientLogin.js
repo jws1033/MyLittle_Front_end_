@@ -48,7 +48,7 @@ class PatientLogin extends Component {
   render() {
     return (
       
-      <div className="section" style={{ marginTop: " 200px "}} >
+      <div className="section" style={{ marginTop: " 150px "}} >
         <div className="header">
           <img
           src={ " http://wiki.hash.kr/images/8/88/%EB%A9%94%ED%83%80%EB%A7%88%EC%8A%A4%ED%81%AC_%EB%A1%9C%EA%B3%A0.png"} 
