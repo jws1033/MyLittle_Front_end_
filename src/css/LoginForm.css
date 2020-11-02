@@ -27,7 +27,7 @@ body {
   padding: 10px 20px;
   font-size: 20px;
   font-weight: 500;
-  color: #3498db;
+  color: #936cff;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -61,7 +61,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .container .close-btn:hover {
-  color: #3498db;
+  color: #aa75ff;
 }
 .container .text {
   font-size: 35px;
@@ -87,14 +87,14 @@ form .data input {
   border: 1px solid silver;
 }
 form .data input:focus {
-  border-color: #3498db;
+  border-color: #9f76ff;
   border-bottom-width: 2px;
 }
 form .forgot-pass {
   margin-top: -8px;
 }
 form .forgot-pass a {
-  color: #3498db;
+  color: #a66eff;
   text-decoration: none;
 }
 form .forgot-pass a:hover {
@@ -160,6 +160,23 @@ form .signup-link a:hover {
   background-image: linear-gradient(to left,#ff9751, #eab401);
   cursor: pointer;
   border-radius: 20px;
+  background-size: 200%;
+  transition: 0.5s;
+  background-position: right;
+}
+
+.submit-button {
+  background-image: linear-gradient(to right, #ff5160, #ff9751);
+  border-radius: 10px;
+  border: none;
+}
+
+.submit-button:active,
+.submit-button:hover,
+.submit-button:focus {
+  background-image: linear-gradient(to left,#ff5160, #ff9751);
+  cursor: pointer;
+  border-radius: 10px;
   background-size: 200%;
   transition: 0.5s;
   background-position: right;

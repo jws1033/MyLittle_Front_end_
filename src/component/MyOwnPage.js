@@ -10,7 +10,7 @@ class MyOwnPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      nickname: "",
       age: "",
       residence: "",
       subject: "",
@@ -54,6 +54,7 @@ class MyOwnPage extends Component {
 
       const transactionHash = await storehash.methods
         .MyOwnPage(
+          this.state.nickname,
           this.state.city,
           this.state.gender,
           this.state.age,
@@ -123,21 +124,31 @@ class MyOwnPage extends Component {
                     // </a> */}
                   
         </div>
-        <div className="section" style={{ marginTop : " 80px" }}>
+        <div className="section" style={{ marginTop : " 10px" }}>
           <div className="header">
+            <div>
+              <img src="https://www.flaticon.com/svg/static/icons/svg/2904/2904566.svg"
+                width="150px"
+              >
+              </img>
+            </div>
             <h2>My Info</h2>
           </div>
           <form onSubmit={this.handleSubmit} margin="auto" padding="auto">
-            <div style={{ fontSize: " 20px "}}>
-                성별 :<input type="value" value={this.state.gender}/ >
+          <div style={{ fontSize: " 20px "}}>
+                닉네임 : {this.state.nickname}
             </div>
             <br></br>
             <div style={{ fontSize: " 20px "}}>
-                나이 :<input type="value" value={this.state.age} />
+                성별 : {this.state.gender}
             </div>
             <br></br>
             <div style={{ fontSize: " 20px "}}>
-                거주지 :<input type="value" value={this.state.city} />
+                나이 :{this.state.age}
+            </div>
+            <br></br>
+            <div style={{ fontSize: " 20px "}}>
+                거주지 :{this.state.city}
             </div>
             {/* <input
               type="text"
@@ -148,7 +159,7 @@ class MyOwnPage extends Component {
             />{" "} */}
             <br></br>
             <div style={{ fontSize: " 20px "}}>
-                키 :<input type="value" value={this.state.height} />
+                키 :{this.state.height}
             </div>
             {/* <input
               type="text"
@@ -159,7 +170,7 @@ class MyOwnPage extends Component {
             />{" "} */}
             <br></br>
             <div style={{ fontSize: " 20px "}}>
-                몸무게:<input type="value" value={this.state.weight} />
+                몸무게:{this.state.weight}
             </div>
             {/* <input
               type="text"
@@ -173,11 +184,11 @@ class MyOwnPage extends Component {
               placeholder="몸무게를 입력해 주세요"
             ></input> */}
             <br></br>
-            <input
+            {/* <input
               className="btn btn-warning newitem-btn"
               type="submit"
               id="register"
-            />
+            /> */}
           </form>
         </div>
       </div>

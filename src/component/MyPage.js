@@ -55,7 +55,7 @@ class MyPage extends Component {
 
       const transactionHash = await storehash.methods
         .registerPatient(
-          this.state.name,
+          this.state.nickname,
           this.state.gender,
           this.state.age,
           this.state.hight,
@@ -79,11 +79,24 @@ class MyPage extends Component {
         <div>
           <Navbar />
         </div>
-        <div className="section" style={{ marginTop : " 80px" }}>
+        <div className="section" style={{ marginTop : " 10px" }}>
           <div className="header">
+            <div>
+              <img src="https://www.flaticon.com/svg/static/icons/svg/2904/2904566.svg"
+                width="100px"
+              >
+              </img>
+            </div>
             <h2>신체 정보를 등록합니다</h2>
           </div>
           <form onSubmit={this.handleSubmit}>
+          <input
+              type="text"
+              className="newitem-form"
+              name="nickname"
+              placeholder="닉네임을 입력해 주세요"
+              onChange={this.handleChange}
+            />{" "}
             <select
               className="newitem-form"
               name="gender"
@@ -122,11 +135,9 @@ class MyPage extends Component {
               placeholder="몸무게를 입력해 주세요"
             ></input>
             <br></br>
-            <input
-              className="btn btn-warning newitem-btn"
-              type="submit"
-              id="register"
-            />
+            <Button variant="primary" type="submit" className="submit-button" >
+              등록
+            </Button>
           </form>
         </div>
       </div>

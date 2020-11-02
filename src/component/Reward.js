@@ -12,6 +12,7 @@ class Reward extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      reward: "",
       subject: "",
       gender: "",
     };
@@ -37,10 +38,15 @@ class Reward extends Component {
         <div>
           <Navbar />
         </div>
-        <div class="section" style={{ marginTop: "80px" }}>
+        <div class="section" style={{ marginTop: "10px" }}>
           <div class="header">
+            <div>
+              <img src="https://www.flaticon.com/svg/static/icons/svg/845/845665.svg"
+                width="100px"
+              ></img>
+            </div>
             <h1>Total Reword</h1>
-            <h2>888</h2>
+            <h2>{this.state.reward}</h2>
           </div>
         </div>
       </div>

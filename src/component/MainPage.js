@@ -4,6 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
+import Navbar from "./Navbar";
 
 class MainPage extends Component {
   constructor(props) {
@@ -71,73 +72,19 @@ class MainPage extends Component {
     }
   }; //onClick
 
+  
+
   render() {
     return (
       <div>
-        <div>
-        <nav className="navbar navbar-default">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <button
-                  type="button"
-                  className="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                >
-                  <span className="sr-only">Toggle</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand" href="/MainPage">
-                  <div id="logo">
-                    <img src={`${process.env.PUBLIC_URL}/LogoMLD.ico`} width="40px" height="40px"  />
-                    {/* My Little Doctor */}
-                  </div>
-                </a>
-              </div>
+        <Navbar/>
 
-              <div
-                className="collapse navbar-collapse"
-                id="bs-example-navbar-collapse-1"
-              >
-                <ul className="nav navbar-nav" >
-                  <li>
-                    <a href="/Reward">리워드</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/List">문진기록표</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                  <a href="/MyPage">마이페이지</a>
-                  </li>
-                  <li>
-                    <a>
-                      <strong>{sessionStorage.getItem("account")}</strong>님
-                      반갑습니다!
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Logout">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-
-        <div className="section" style={{ marginTop: "80px" }}>
+        <div className="section" style={{ marginTop: "100px" }}>
           <div className="header">
-            <h2 style={{ color: "white", fontFamily: "NanumSquareRound" }}>
+            <h2 style={{ fontFamily: "NanumSquareRound" }}>
               반갑습니다
             </h2>
-            <h4 style={{ color: "white", fontFamily: "NanumSquareRound" }}>
+            <h4 style={{ fontFamily: "NanumSquareRound" }}>
               마이 리틀 닥터는 여러분의 건강을 매일 체크해 주고, 스스로 문진하는
               형식의 의료 스몰 데이터 수집 어플리케이션으로써 <br></br>
               여러분의 소중한 데이터를 제공해 주시면 토큰 리워드를 지급해 주는
