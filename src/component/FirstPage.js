@@ -10,12 +10,16 @@ const FirstPage = ({ history }) => {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>
+        {/* <h3>
           스스로 문진하는 형식의 의료 스몰 데이터 수집 사이트{" "}<br></br>
           <h4>Medical small data collection site in the form of self-inquiry</h4>
-        </h3>
+        </h3> */}
         <br></br>
-        <a href="/PatientLogin"><img src="LogoMLD.png" className="App-logo" alt="logo" /></a>
+        <Button variant="info" size="lg" onClick={() => {
+          history.push('/PatientLogin')
+        }}>
+          Let's go!
+        </Button>
         <br></br>
       </header>
     </div>

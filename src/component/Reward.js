@@ -6,6 +6,8 @@ import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
 
+import Navbar from "./Navbar";
+
 class Reward extends Component {
   constructor(props) {
     super(props);
@@ -33,63 +35,12 @@ class Reward extends Component {
     return (
       <div>
         <div>
-        <nav className="navbar navbar-default">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <button
-                  type="button"
-                  className="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                >
-                  <span className="sr-only">Toggle</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand" href="/MainPage">
-                  My Little Doctor
-                </a>
-              </div>
-
-              <div
-                className="collapse navbar-collapse"
-                id="bs-example-navbar-collapse-1"
-              >
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/Reward">리워드</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/List">문진기록표</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                  <a href="/MyPage">마이페이지</a>
-                  </li>
-                  <li>
-                    <a>
-                      <strong>{sessionStorage.getItem("account")}</strong>님
-                      반갑습니다!
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Logout">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          <Navbar />
         </div>
         <div class="section" style={{ marginTop: "80px" }}>
           <div class="header">
-            <h1 style={{ color : "white" }}>Total Reword</h1>
-            <h2 style={{ color : "white" }}>888</h2>
+            <h1>Total Reword</h1>
+            <h2>888</h2>
           </div>
         </div>
       </div>

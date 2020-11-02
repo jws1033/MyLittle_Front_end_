@@ -4,6 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import web3 from "../web3";
 import ipfs from "../ipfs";
 import storehash from "../storehash";
+import Navbar from "./Navbar";
 
 class MyOwnPage extends Component {
   constructor(props) {
@@ -75,7 +76,8 @@ class MyOwnPage extends Component {
     return (
       <div>
         <div>
-          <nav className="navbar navbar-default">
+          <Navbar />
+          {/* <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -115,33 +117,26 @@ class MyOwnPage extends Component {
                     <a href="/MyPage">마이페이지</a>
                   </li>
                   <li>
-                    <a>
+                    {/* <a>
                       <strong>{sessionStorage.getItem("account")}</strong>님
                       반갑습니다!
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Logout">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                    // </a> */}
+                  
         </div>
-        <div className="section" style={{ marginTop : " 80px", backgroundColor:"rgba(150, 150, 150, 0.2)" }}>
+        <div className="section" style={{ marginTop : " 80px" }}>
           <div className="header">
-            <h2 style={{ color: "white" }}>My Info</h2>
+            <h2>My Info</h2>
           </div>
           <form onSubmit={this.handleSubmit} margin="auto" padding="auto">
-            <div style={{ color: " white " , fontSize: " 20px "}}>
+            <div style={{ fontSize: " 20px "}}>
                 성별 :<input type="value" value={this.state.gender}/ >
             </div>
             <br></br>
-            <div style={{ color: " white " , fontSize: " 20px "}}>
+            <div style={{ fontSize: " 20px "}}>
                 나이 :<input type="value" value={this.state.age} />
             </div>
             <br></br>
-            <div style={{ color: " white " , fontSize: " 20px "}}>
+            <div style={{ fontSize: " 20px "}}>
                 거주지 :<input type="value" value={this.state.city} />
             </div>
             {/* <input
@@ -152,7 +147,7 @@ class MyOwnPage extends Component {
               onChange={this.handleChange}
             />{" "} */}
             <br></br>
-            <div style={{ color: " white " , fontSize: " 20px "}}>
+            <div style={{ fontSize: " 20px "}}>
                 키 :<input type="value" value={this.state.height} />
             </div>
             {/* <input
@@ -163,7 +158,7 @@ class MyOwnPage extends Component {
               onChange={this.handleChange}
             />{" "} */}
             <br></br>
-            <div style={{ color: " white " , fontSize: " 20px "}}>
+            <div style={{ fontSize: " 20px "}}>
                 몸무게:<input type="value" value={this.state.weight} />
             </div>
             {/* <input

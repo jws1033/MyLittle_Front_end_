@@ -16,7 +16,7 @@
 
   #App-logo a:hover {
     animation: App-logo-spin infinite s linear;
-    /* background: url('C:\Users\18\Desktop\MLD\src\images\LogoMLD_ico.png'); */
+    /* background: url('http://blog.naver.com/storyphoto/viewer.jsp?src=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyMDExMDJfMjEx%2FMDAxNjA0MjU0NDQ4MjM2.erwMI5c6vNtAWpFKUcD0ipF77rpnbuxnUd0-2KNUqC8g.e8Vle9v8JWC4mOADtlOgEkQKataCwZp4YaFraLlXrAAg.PNG.dbfmtm22%2FMyLittleDoctor_BackGround.png'); */
   }
 }
 
@@ -26,7 +26,7 @@
       rgba(56, 56, 56, 0.01),
       rgba(255, 255, 255, 0.01)
     ),
-    url(https://postfiles.pstatic.net/MjAyMDExMDJfMjEx/MDAxNjA0MjU0NDQ4MjM2.erwMI5c6vNtAWpFKUcD0ipF77rpnbuxnUd0-2KNUqC8g.e8Vle9v8JWC4mOADtlOgEkQKataCwZp4YaFraLlXrAAg.PNG.dbfmtm22/MyLittleDoctor_BackGround.png?type=w773);
+    url(https://blog.kakaocdn.net/dn/xbVGI/btqMgscE1ve/XoBmZ27YgzPKzeUQQOG6sk/img.png?original);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -36,62 +36,11 @@ class List extends Component {
       <div>
         <div>
           <Navbar />
-        {/* <nav className="navbar navbar-default">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <button
-                  type="button"
-                  className="navbar-toggle collapsed"
-                  data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1"
-                >
-                  <span className="sr-only">Toggle</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand" href="/MainPage">
-                  My Little Doctor
-                </a>
-              </div>
-
-              <div
-                className="collapse navbar-collapse"
-                id="bs-example-navbar-collapse-1"
-              >
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/Reward">리워드</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="/List">문진기록표</a>
-                  </li>
-                </ul>
-
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="/MyPage">마이페이지</a>
-                  </li>
-                  <li>
-                    <a>
-                      <strong>{sessionStorage.getItem("account")}</strong>님
-                      반갑습니다!
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Logout">로그아웃</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav> */}
+        
         </div>
-        <div class="">
+        <div class="section">
           <div className="">
-              
+              <h3>이번 주에 마신 술의 양은<input type="value"></input></h3>
               
           </div>
         </div>

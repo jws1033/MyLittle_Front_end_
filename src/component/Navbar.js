@@ -24,8 +24,8 @@ export default function Navbar({ title }) {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                   </button>
-                  <a className="navbar-brand" href="/MainPage">
-                    My Little Doctor
+                  <a className="navbar-brand" href="/MainPage" >
+                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcTAt4P%2FbtqMegYn9hX%2FVgBJMewaP5MeftK7hC0KWk%2Fimg.png" width="120px"></img>
                   </a>
                 </div>
   
