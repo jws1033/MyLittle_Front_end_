@@ -193,3 +193,18 @@ form .signup-link a:hover {
 .field:hover {
   background-color: rgba(255, 255, 255, 0.7);
 }
+
+
+.mainQuestion-O-Answer {
+  background-color:#ff6551;
+  border-radius: 100px;
+  border: none;
+}
+
+
+.mainQuestion-X-Answer {
+  background-color:#67f82e;
+  border-radius: 20px;
+  border: none;
+}
+
