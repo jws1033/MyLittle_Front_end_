@@ -26,8 +26,8 @@ export default function Navbar({ title }) {
                     <span className="icon-bar"></span>
                   </button>
                   <a className="navbar-brand" href="/MainPage" style={{ color:"white"}}>
-                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkGWdb%2FbtqMmplHxFl%2FcuziavVyjQQORNQLe7DkXk%2Fimg.png"
-                    width="120px"
+                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcTAt4P%2FbtqMegYn9hX%2FVgBJMewaP5MeftK7hC0KWk%2Fimg.png"
+                    width="250px"
                     
                     >
                     </img>
@@ -38,7 +38,13 @@ export default function Navbar({ title }) {
                   className="collapse navbar-collapse"
                   id="bs-example-navbar-collapse-1"
                 >
-                  <ul className="nav navbar-nav" >
+{/* 
+                  <ul className="nav navbar-nav">
+                    <li>
+                      <a href="/MainPage">Just10Seconds</a>
+                    </li>
+                  </ul> */}
+                  {/* <ul className="nav navbar-nav" >
                     <li>
                       <a href="/Reward" style={{ color:"white"}}>리워드</a>
                     </li>
@@ -48,9 +54,18 @@ export default function Navbar({ title }) {
                     <li>
                       <a href="/List">문진기록표</a>
                     </li>
-                  </ul>
+                  </ul> */}
   
                   <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <a href="/MainPage">Just10Seconds</a>
+                    </li>
+                    <li>
+                      <a href="/List">문진기록표</a>
+                    </li>
+                    <li>
+                      <a href="/Reward">리워드</a>
+                    </li>
                     <li>
                       <a href="/MyPage">마이페이지</a>
                     </li>
@@ -61,7 +76,7 @@ export default function Navbar({ title }) {
                       </a>
                     </li>
                     <li>
-                      <a href="/Logout">로그아웃</a>
+                      <a href="/">로그아웃</a>
                     </li>
                   </ul>
                 </div>
