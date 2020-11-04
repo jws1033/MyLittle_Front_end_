@@ -191,6 +191,15 @@ class MyOwnPage extends Component {
             /> */}
           </form>
         </div>
+        <div>
+        {/* {sessionStorage.removeItem("account")} */}
+
+          <li>
+            <button className="answer-button" onClick="/">
+              <h2>내 정보 삭제</h2>
+            </button>
+          </li>
+        </div>
       </div>
     );
   }

@@ -196,15 +196,39 @@ form .signup-link a:hover {
 
 
 .mainQuestion-O-Answer {
-  background-color:#ff6551;
-  border-radius: 100px;
+  color:#ff6551;
+  background-color: transparent;
+  border: none;
+  font-family: "NanumSquareRound";
+  font-size: 40px;
+  padding:8px;
+}
+
+.mainQuestion-O-Answer:active,
+.mainQuestion-O-Answer:hover,
+.mainQuestion-O-Answer:focus
+ {
+  color:#ff6551;
+  background-color: transparent;
   border: none;
 }
 
 
 .mainQuestion-X-Answer {
-  background-color:#67f82e;
-  border-radius: 20px;
+  color:#67f82e;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  padding:8px;
+}
+
+
+
+.mainQuestion-X-Answer:active,
+.mainQuestion-X-Answer:hover,
+.mainQuestion-X-Answer:focus {
+  color:#67f82e;
+  background-color: transparent;
   border: none;
 }
 
