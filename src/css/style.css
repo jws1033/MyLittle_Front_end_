@@ -227,8 +227,8 @@ body {
 
 .answer-button {
   margin: 50px;
-  color: black;
-  background-image: linear-gradient(to right, #ffba3a, #ffe180);
+  color: white;
+  background-image: linear-gradient(to right,#ff9751, #eab401);
   border-radius: 10px;
   border: none;
 }
@@ -236,11 +236,23 @@ body {
 .answer-button:active,
 .answer-button:hover,
 .answer-button:focus {
-  color: black;
-  background-image: linear-gradient(to left,#ffba3a, #ffe180);
+  color: white;
+  background-image: linear-gradient(to left,#ff9751, #eab401);
   cursor: pointer;
   border-radius: 10px;
   background-size: 200%;
   transition: 1s;
   background-position: right;
+}
+
+
+.history-list-form {
+  font-size: 15px;
+  max-width: 50%;
+  padding: 20px;
+  margin: 20px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0.4em 0.4em 0.6em rgb(105, 105, 105);
+  background-color: white;
 }

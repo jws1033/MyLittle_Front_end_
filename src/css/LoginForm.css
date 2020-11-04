@@ -150,7 +150,7 @@ form .signup-link a:hover {
 
 .my-button {
   background-image: linear-gradient(to right, #ff9751, #eab401);
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
 }
 
@@ -159,7 +159,7 @@ form .signup-link a:hover {
 .my-button:focus {
   background-image: linear-gradient(to left,#ff9751, #eab401);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   background-size: 200%;
   transition: 0.5s;
   background-position: right;
@@ -183,11 +183,12 @@ form .signup-link a:hover {
 }
 
 .field {
+  font-size: 15px;
   width: 100%;
   height: 56px;
   border-radius: 4px;
   position: relative;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255,255,255,0.9);
   transition: 0.3s all;
 }
 .field:hover {
@@ -201,17 +202,17 @@ form .signup-link a:hover {
   border: none;
   font-family: "NanumSquareRound";
   font-size: 40px;
-  padding:8px;
 }
 
+
 .mainQuestion-O-Answer:active,
-.mainQuestion-O-Answer:hover,
-.mainQuestion-O-Answer:focus
- {
+.mainQuestion-O-Answer:hover {
   color:#ff6551;
   background-color: transparent;
   border: none;
 }
+
+
 
 
 .mainQuestion-X-Answer {
@@ -219,16 +220,55 @@ form .signup-link a:hover {
   background-color: transparent;
   border: none;
   font-size: 40px;
-  padding:8px;
 }
 
 
 
 .mainQuestion-X-Answer:active,
-.mainQuestion-X-Answer:hover,
-.mainQuestion-X-Answer:focus {
+.mainQuestion-X-Answer:hover {
   color:#67f82e;
   background-color: transparent;
   border: none;
 }
 
+
+
+
+.delete-info {
+  width: 200px;
+  color: white;
+  background-image: linear-gradient(to right, #fb2a2a, #ea3701);
+  border-radius: 10px;
+  border: none;
+}
+
+.delete-info:active,
+.delete-info:hover,
+.delete-info:focus {
+  background-image: linear-gradient(to left,#fb2a2a, #ea3701);
+  cursor: pointer;
+  border-radius: 10px;
+  background-size: 200%;
+  transition: 0.5s;
+  background-position: right;
+}
+
+
+.modify-info {
+  width: 200px;
+  color: white;
+  background-image: linear-gradient(to right, #fbd52a, #ead301);
+  border-radius: 10px;
+  border: none;
+}
+
+.modify-info:active,
+.modify-info:hover,
+.modify-info:focus {
+  background-image: linear-gradient(to left,#fbd52a, #ead301);
+  cursor: pointer;
+  border-radius: 10px;
+  background-size: 200%;
+  transition: 0.5s;
+  background-position: right;
+}

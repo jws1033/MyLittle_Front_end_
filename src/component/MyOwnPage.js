@@ -193,13 +193,23 @@ class MyOwnPage extends Component {
         </div>
         <div>
         {/* {sessionStorage.removeItem("account")} */}
+            <div style={{  display: "flex", justifyContent: "center" }}>
 
-          <li>
-            <button className="answer-button" style={{  margin: "auto" }} onClick="/">
-              <h2 style={{ fontSize: "20px"}}>내 정보 삭제</h2>
+            <button className="delete-info" style={{ margin: "10px" }} onClick={ () => {
+              const result = window.confirm("정말 삭제?")
+              // result가 true면 삭제 fetch 요청
+              // result가 false면 do nothing
+            }}>
+              <h2 style={{ fontSize: "15px"}}>내 정보 삭제</h2>
             </button>
-          </li>
-        </div>
+            <button className="modify-info" style={{ margin: "10px" }} onClick={()=>this.props.history.push("/MyPage")}>
+              <h2 style={{ fontSize: "15px"}}>수정</h2>
+              {/* 수정 눌렀을 때 기존 정보 입력돼 있는 MyPage로 */}
+            </button>
+            
+          </div>
+          
+          </div>
       </div>
     );
   }

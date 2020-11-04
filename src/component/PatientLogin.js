@@ -57,7 +57,7 @@ class PatientLogin extends Component {
           />
           {/* <h2>로그인하세요!</h2> */}
         </div>
-        <div style={{ maxWidth: 680, margin: " auto "}}>
+        <div style={{ maxWidth: 680, margin: " auto ", }}>
           <Form className="login-form" onSubmit={this.onSubmit}>
             <Form.Group className="">
               <div>
@@ -71,7 +71,7 @@ class PatientLogin extends Component {
               </div>
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="my-button">
+            <Button variant="primary" type="submit" className="my-button" style={{ margin: " 55px "}}>
               로그인
             </Button>
           </Form>

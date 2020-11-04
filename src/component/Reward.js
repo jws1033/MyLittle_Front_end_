@@ -45,7 +45,7 @@ class Reward extends Component {
                 width="100px"
               ></img>
             </div>
-            <h1>Total Reword</h1>
+            <h1>Total Reward</h1>
             <h2>{this.state.reward}</h2>
           </div>
         </div>

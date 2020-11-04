@@ -61,7 +61,7 @@ export default function Navbar({ title }) {
                       <a href="/MainPage">Just10Seconds</a>
                     </li>
                     <li>
-                      <a href="/List">문진기록표</a>
+                      <a href="/List">History</a>
                     </li>
                     <li>
                       <a href="/Reward">리워드</a>

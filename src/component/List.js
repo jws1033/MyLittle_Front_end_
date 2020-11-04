@@ -43,13 +43,27 @@ class List extends Component {
         <div class="section">
           <div className="">
             <div>
-              <img src="https://www.flaticon.com/svg/static/icons/svg/3616/3616575.svg"
+              <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg"
                 width="90px"
               ></img>
             </div>
             <br></br>
-              <h3>이번 주에 마신 술의 양은 {this.state.drink} 병입니다!</h3>
-              <h3>이번 주는 운동을 {this.state.exercise} 분 이상 하셨습니다!</h3>
+              <h3>History</h3>
+              <br></br>
+              <div className="history-list-form">
+                
+                문진 날짜: {/* 날짜 데이터 */}<br></br>
+                문진 코드: {/* 문진 카테고리(ex.두통) */}<br></br>
+                문진 내용: {/* 문진 내용 */} {/*문진 내용에 대한 결과 (ex.o)*/}
+                
+              </div>
+              <div className="history-list-form">
+                
+                문진 날짜: {/* 날짜 데이터 */}<br></br>
+                문진 코드: {/* 문진 카테고리(ex.두통) */}<br></br>
+                문진 내용: {/* 문진 내용 */} {/*문진 내용에 대한 결과 (ex.o)*/}
+                
+              </div>
           </div>
         </div>
       </div>

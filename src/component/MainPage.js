@@ -94,7 +94,7 @@ export default function MainPage() {
           })}
           <h4 style={{ fontFamily: "NanumSquareRound" }}>
           <Button variant="primary" type="submit" className="answer-button" style={{ padding:"15px", width:"300px"}} >
-            제출
+            답변 완료
           </Button>
 
             

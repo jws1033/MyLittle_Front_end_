@@ -139,6 +139,7 @@ class MyPage extends Component {
               등록
             </Button>
           </form>
+          {/* 등록 클릭 시 MyOwnPage로 이동 (정보 입력된 창)*/}
         </div>
       </div>
     );
