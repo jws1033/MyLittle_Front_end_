@@ -226,6 +226,7 @@ body {
 }
 
 .answer-button {
+  margin: 50px;
   color: black;
   background-image: linear-gradient(to right, #ffba3a, #ffe180);
   border-radius: 10px;

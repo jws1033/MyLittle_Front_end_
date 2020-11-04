@@ -195,8 +195,8 @@ class MyOwnPage extends Component {
         {/* {sessionStorage.removeItem("account")} */}
 
           <li>
-            <button className="answer-button" onClick="/">
-              <h2>내 정보 삭제</h2>
+            <button className="answer-button" style={{  margin: "auto" }} onClick="/">
+              <h2 style={{ fontSize: "20px"}}>내 정보 삭제</h2>
             </button>
           </li>
         </div>
