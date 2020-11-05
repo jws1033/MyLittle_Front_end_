@@ -3,6 +3,7 @@ import "../css/style.css";
 import { Button, Form, NavDropdown } from "react-bootstrap";
 import Navbar from "./Navbar";
 import React, { useState, useEffect } from "react";
+import List from "./List"
 
 export default function MainPage() {
   const history = useHistory()
@@ -183,10 +184,13 @@ export default function MainPage() {
           <Button variant="primary" type="submit" className="answer-button" style={{ padding:"15px", width:"300px"}} >
             답변 완료
           </Button>
-
-            
           </h4>
           </form>
+          <body>
+            {/* {survey.map((survey)=>{
+              <List survey={survey}/>
+            })} */}
+          </body>
         </div>
         
       </div>

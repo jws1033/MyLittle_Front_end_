@@ -8,6 +8,7 @@ import Logout from "./component/Logout";
 import FirstPage from "./component/FirstPage";
 import PatientLogin from "./component/PatientLogin";
 
+import History from "./component/History";
 import MyOwnPage from "./component/MyOwnPage";
 import MyPage from "./component/MyPage";
 import List from "./component/List";
@@ -19,6 +20,7 @@ const App = () => {
     <div>
       <Route exact path="/" component={FirstPage} />
       
+      <Route path="/History/:id" component={History} />
       <Route path="/MyOwnPage" component={MyOwnPage} />
       <Route path="/Logout" component={Logout} />
       <Route path="/MainPage" component={MainPage} />
