@@ -40,16 +40,20 @@ const MyPage = () => {
       method:'GET'
     })
     .then((resp)=>{
+      setLoaded(true)
       if (resp.status === 200){
         setAction('edit')
+        return resp.json()
       } 
-      setLoaded(true)
-      return resp.json()
+      else{
+        return false
+      }
     })
     .then(
      (data)=>{
-       console.log(data)
-       setUser(data)
+       if (data){
+        setUser(data)
+       }       
      }
     )
     

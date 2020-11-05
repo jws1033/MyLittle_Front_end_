@@ -62,16 +62,20 @@ const MyOwnPage = () => {
       method:'GET'
     })
     .then((resp)=>{
+      setLoaded(true)
       if (resp.status === 200){
         setAction('edit')
+        return resp.json()
       } 
-      setLoaded(true)
-      return resp.json()
+      else{
+        return false
+      }
     })
     .then(
      (data)=>{
-       console.log(data)
-       setUser(data)
+       if (data){
+        setUser(data)
+       }       
      }
     )
     
@@ -210,7 +214,8 @@ const MyOwnPage = () => {
           }}>
             <h2 style={{ fontSize: "15px"}}>내 정보 삭제</h2>
           </Button>
-          {loaded? (          <Button className="modify-info" style={{ margin: "10px" }} onClick={()=> history.push("/MyPage")}>
+          {loaded? (
+          <Button className="modify-info" style={{ margin: "10px" }} onClick={()=> history.push("/MyPage")}>
             <h2 style={{ fontSize: "15px"}}>{action==='edit'? '수정' : '등록'}</h2>
             {/* 수정 눌렀을 때 기존 정보 입력돼 있는 MyPage로 */}
           </Button>): <Spinner animation="grow" />}
