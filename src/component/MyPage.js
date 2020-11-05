@@ -98,9 +98,7 @@ const MyPage = () => {
       {loaded? ( <form onSubmit={handleSubmit}>
         <div className="header">
           <div>
-            <img src="https://www.flaticon.com/svg/static/icons/svg/2904/2904566.svg"
-              width="100px"
-            >
+            <img src="https://www.flaticon.com/svg/static/icons/svg/2904/2904566.svg" width="100px">
             </img>
           </div>
           <h2>신체 정보를 {action==='edit'? '수정' : '등록'} 합니다</h2>

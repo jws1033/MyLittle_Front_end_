@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 
 export default function MainPage() {
   const history = useHistory()
+
   const [survey, setSurvey] = React.useState( {
     no:"",
     questions:[{
@@ -30,6 +31,23 @@ export default function MainPage() {
     }]
   })
 
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        } else if (res.status === 401){
+          alert("로그인해주세요")
+          history.push('/')
+        }
+      })
+  },[]);
+
   const handleSubmit = React.useCallback(async function(e){
     e.preventDefault()
     let data = await {
@@ -43,6 +61,7 @@ export default function MainPage() {
         return questionObj.answer
       })
     }
+    
 
     await fetch("http://localhost:3001/api/survey/submit", {
       method:'POST',
