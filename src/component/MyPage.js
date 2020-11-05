@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router-dom";
 
 import "../css/style.css";
@@ -7,12 +7,9 @@ import "../css/style.css";
 import Navbar from "./Navbar";
 
 const MyPage = () => {
-
-
-
+  const [action, setAction] = useState('register');
+  const [loaded, setLoaded] = useState(false);
   const history = useHistory()
-  const location = useLocation();
-  console.log(location)
   const [user, setUser] = useState({
     sender : sessionStorage.getItem('account'),
     name : "",
@@ -38,6 +35,26 @@ const MyPage = () => {
     });
   };
 
+  const fetchUser = ()=>{
+    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`,{
+      method:'GET'
+    })
+    .then((resp)=>{
+      if (resp.status === 200){
+        setAction('edit')
+      } 
+      setLoaded(true)
+      return resp.json()
+    })
+    .then(
+     (data)=>{
+       console.log(data)
+       setUser(data)
+     }
+    )
+    
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -49,6 +66,7 @@ const MyPage = () => {
       body: JSON.stringify(user),
     })
     .then((res) => {
+      console.log(res)
       if (res.status === 200) {
         history.push("/mainpage");
       } else {
@@ -63,12 +81,17 @@ const MyPage = () => {
     });
   }
 
+  React.useEffect(() => {
+    fetchUser()
+  }, [])
+
   return (
     <div>
       <div>
         <Navbar />
       </div>
       <div className="section" style={{ marginTop : " 10px" }}>
+      {loaded? ( <form onSubmit={handleSubmit}>
         <div className="header">
           <div>
             <img src="https://www.flaticon.com/svg/static/icons/svg/2904/2904566.svg"
@@ -76,9 +99,9 @@ const MyPage = () => {
             >
             </img>
           </div>
-          <h2>신체 정보를 등록합니다</h2>
+          <h2>신체 정보를 {action==='edit'? '수정' : '등록'} 합니다</h2>
         </div>
-        <form onSubmit={handleSubmit}>
+        
           <input
               type="text"
               className="newitem-form"
@@ -135,9 +158,10 @@ const MyPage = () => {
             ></input>
             <br></br>
             <Button variant="primary" type="submit" className="submit-button" >
-              등록
+              {action==='edit'? '수정' : '등록'}
             </Button>
-        </form>
+        </form>): <Spinner animation="grow" />}
+       
       </div>
     </div>
   );

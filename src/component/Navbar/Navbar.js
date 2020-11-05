@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css"
 
 export default function Navbar({ title }) {
@@ -67,7 +68,7 @@ export default function Navbar({ title }) {
                       <a href="/Reward">리워드</a>
                     </li>
                     <li>
-                      <a href="/MyPage">마이페이지</a>
+                      <Link to='/MyOwnpage'>마이페이지</Link>
                     </li>
                     <li>
                       <a>
@@ -76,7 +77,7 @@ export default function Navbar({ title }) {
                       </a>
                     </li>
                     <li>
-                      <a href="/">로그아웃</a>
+                      <a href="/" onClick={() => {{sessionStorage.removeItem("account")}}}>로그아웃</a>
                     </li>
                   </ul>
                 </div>

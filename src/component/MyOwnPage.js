@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const MyOwnPage = () => {
+  const [action, setAction] = useState('register');
+  const [loaded, setLoaded] = useState(false);
   const [user, setUser] = useState({});
 
   const history = useHistory()
@@ -48,11 +50,36 @@ const MyOwnPage = () => {
 
         console.log(err);
 
-        alert("에러")
+        alert("등록을 누르세요")
 
       });
 
   },[]);
+
+
+  const fetchUser = ()=>{
+    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`,{
+      method:'GET'
+    })
+    .then((resp)=>{
+      if (resp.status === 200){
+        setAction('edit')
+      } 
+      setLoaded(true)
+      return resp.json()
+    })
+    .then(
+     (data)=>{
+       console.log(data)
+       setUser(data)
+     }
+    )
+    
+  }
+
+  React.useEffect(() => {
+    fetchUser()
+  }, [])
 
 
   return (
@@ -176,17 +203,18 @@ const MyOwnPage = () => {
       {/* {sessionStorage.removeItem("account")} */}
           <div style={{  display: "flex", justifyContent: "center" }}>
 
-          <button className="delete-info" style={{ margin: "10px" }} onClick={ () => {
+          <Button className="delete-info" style={{ margin: "10px" }} onClick={ () => {
             const result = window.confirm("정말 삭제?")
             // result가 true면 삭제 fetch 요청
             // result가 false면 do nothing
           }}>
             <h2 style={{ fontSize: "15px"}}>내 정보 삭제</h2>
-          </button>
-          <button className="modify-info" style={{ margin: "10px" }} onClick={()=> history.push("/MyPageEdit")}>
-            <h2 style={{ fontSize: "15px"}}>수정</h2>
+          </Button>
+          {loaded? (          <Button className="modify-info" style={{ margin: "10px" }} onClick={()=> history.push("/MyPage")}>
+            <h2 style={{ fontSize: "15px"}}>{action==='edit'? '수정' : '등록'}</h2>
             {/* 수정 눌렀을 때 기존 정보 입력돼 있는 MyPage로 */}
-          </button>
+          </Button>): <Spinner animation="grow" />}
+
           
         </div>
         

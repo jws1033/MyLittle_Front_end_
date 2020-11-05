@@ -24,7 +24,6 @@ const App = () => {
       <Route path="/MainPage" component={MainPage} />
       <Route path="/PatientLogin" component={PatientLogin} />
       <Route path="/MyPage" component={MyPage} />
-      <Route path="/MyPageEdit" component={MyPage} />
       <Route path="/List" component={List} />
       <Route path="/Reward" component={Reward} />
       <Route path="/ShowPatient" component={ShowPatient} />
