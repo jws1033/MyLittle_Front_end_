@@ -1,11 +1,7 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import "../css/style.css";
-import { Button, Form } from "react-bootstrap";
-import web3 from "../web3";
-import ipfs from "../ipfs";
-import storehash from "../storehash";
+import React from "react";
 import Navbar from "./Navbar";
+
+import "../css/style.css";
 
 // 1. HTML/CSS
 // media query, width: px, em, rem, % ... 
@@ -37,34 +33,71 @@ import Navbar from "./Navbar";
 // 개인프로젝트 하나 하세요.(알아서, 아이템 생각하고.)
 
 export default function History({match}) {
-  console.log(match.params.id)
+  const [survey, setSurvey] = React.useState({
+    createAt : "",
+    surveyNum : "",
+    answer : new Array()
+  })
 
-    return (
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/survey/surveyfind?sender=${sessionStorage.getItem('account')}&createAt=${match.params.id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    }).then((survey) => {
+      return survey.json()
+    })
+    .then((data)=>{
+      const surveyQuestion = data.result.surveyQuestion
+      const surveyResult = data.result.surveyResult
+
+      let answers = new Array()
+
+      for(let i = 0; i < surveyQuestion.length; i++){
+        answers.push({
+          question : surveyQuestion[i],
+          result :  surveyResult[i]
+        })
+      }
+
+      setSurvey({
+        createAt : data.result.createAt,
+        surveyNum : data.result.surveyNum,
+        answer : answers 
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("에러")
+    });
+},[match.params.id])
+
+  return (
+    <div>
       <div>
-        <div>
-          <Navbar />
-        
-        </div>
-        <div className="section">
-            <div>
-              <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg"
-                width="90px"
-              ></img>
-            </div>
-            <br></br>
-              <h3>History</h3>
-              <br></br>
-              <div className="history-section">
-                <div className="history-form" >
-                  <div style={{ fontSize: "20px"}}>
-                  문진 날짜: {/* 날짜 데이터 */}<br></br>
-                  문진 코드: {/* 문진 카테고리(ex.두통) */}<br></br>
-                  문진 내용:{/* 문진 내용 o =>  초록색 , x => 빨간색 */}
-                  </div>
-                </div>
-            </div>
-        </div>
+        <Navbar />
+      
       </div>
+      <div className="section">
+          <div>
+            <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
+          </div>
+          <br></br>
+            <h3>History</h3>
+            <br></br>
+            <div className="history-section">
+              <div className="history-form" >                     
+                  <div style={{ fontSize: "20px"}}>
+                  문진 날짜: {survey.createAt}<br /><br />
+                  문진 코드: {survey.surveyNum}<br /><br />
+                  문진 내용<br/><br />
+                  {survey.answer.map((answer, index) => {return <div>{index+1}. {answer.question} {answer.result}</div> })}
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
     );
   
 }

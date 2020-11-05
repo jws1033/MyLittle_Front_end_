@@ -3,11 +3,9 @@ import "../css/style.css";
 import { Button, Form, NavDropdown } from "react-bootstrap";
 import Navbar from "./Navbar";
 import React, { useState, useEffect } from "react";
-import List from "./List"
 
 export default function MainPage() {
   const history = useHistory()
-
   const [survey, setSurvey] = React.useState( {
     no:"",
     questions:[{
@@ -47,7 +45,7 @@ export default function MainPage() {
           history.push('/')
         }
       })
-  },[]);
+  },[history]);
 
   const handleSubmit = React.useCallback(async function(e){
     e.preventDefault()
@@ -85,12 +83,12 @@ export default function MainPage() {
       alert("Error please try again");
     });
 
-  }, [survey])
+  }, [history, survey.no, survey.questions])
 
 
 
   React.useEffect(()=>{
-    fetch("http://localhost:3001/api/survey/load?no=headache", {
+    fetch("http://localhost:3001/api/survey/load", {
 
       method: "GET",
 
@@ -203,13 +201,10 @@ export default function MainPage() {
           <Button variant="primary" type="submit" className="answer-button" style={{ padding:"15px", width:"300px"}} >
             답변 완료
           </Button>
+
+            
           </h4>
           </form>
-          <body>
-            {/* {survey.map((survey)=>{
-              <List survey={survey}/>
-            })} */}
-          </body>
         </div>
         
       </div>

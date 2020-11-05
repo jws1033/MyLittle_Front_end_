@@ -34,7 +34,7 @@ const MyOwnPage = () => {
         console.log(err);
         alert("등록을 누르세요")
       });
-  },[]);
+  },[history]);
 
   const fetchUser = () => {
     fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`,{
