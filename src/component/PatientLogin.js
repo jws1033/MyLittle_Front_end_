@@ -1,51 +1,57 @@
-import React, { Component } from "react";
-import "../css/style.css";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import web3 from "../web3";
-import ipfs from "../ipfs";
-import storehash from "../storehash";
+
+import "../css/style.css";
 import "../css/LoginForm.css";
 
-class PatientLogin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      eth_account: "",
-    };
-    this.onSubmit = this.onSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+const PatientLogin = ({ history }) => {
+  const [account, setAccount] = useState("")
+
+  if (sessionStorage.getItem('account')){
+    history.replace('/mainpage')  
   }
 
-  handleChange = (e) => {
+
+  const handleChange = (e) => {
     e.preventDefault();
     console.log(e.target.value)
-    this.setState({
-      eth_account: e.target.value,
-    });
+    setAccount(e.target.value)
   };
 
-  onSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const accounts = await web3.eth.getAccounts();
 
-    if (this.state.eth_account == accounts) {
-      try {
-        // console.log(account);
-        sessionStorage.setItem("account", accounts[0]);
-      } catch (e) {
-        console.log("error" + e);
-      }
-      window.location.href = "/MainPage";
+    if (account === accounts.toString()) {
+        sessionStorage.setItem("account", accounts.toString());
+        const resp = await fetch("http://localhost:3001/api/user/login", {
+          mode : 'cors',
+          method: 'POST',
+          headers : {
+            'Accept': 'application/json',
+            'Content-Type' : 'application/json'
+          },
+          body:JSON.stringify({txAddress: accounts.toString()})
+        }) 
+        const status = await resp.status;
+        console.log(status)
+        if (status===200) {
+          history.push('/MainPage')
+        }
+        else if (status===401){
+          history.push('/MyPage')
+        }
+      
     } else {
       alert(
         "유효하지 않은 계정입니다. 현재 블록체인 네트워크에 연결된 계정을 입력하세요!"
       );
-      window.location.href = "/PatientLogin";
     }
   }; //onClick
 
-  render() {
+
     return (
       
       <div className="section" style={{ marginTop: " 150px "}} >
@@ -57,16 +63,16 @@ class PatientLogin extends Component {
           />
           {/* <h2>로그인하세요!</h2> */}
         </div>
-        <div style={{ maxWidth: 680, margin: " auto ", }}>
-          <Form className="login-form" onSubmit={this.onSubmit}>
+        <div style={{ maxWidth: 680, margin: " auto "}}>
+          <Form className="login-form" onSubmit={onSubmit}>
             <Form.Group className="">
               <div>
                 <Form.Control 
                   className="field"
                   type="text"
                   placeholder=" 현재 이더리움 네트워크에 연결된 계좌를 입력하세요"
-                  value={this.state.eth_account}
-                  onChange={this.handleChange}
+                  value={account.account}
+                  onChange={handleChange}
                 />
               </div>
             </Form.Group>
@@ -79,6 +85,6 @@ class PatientLogin extends Component {
       </div>
     );
   }
-}
+
 
 export default PatientLogin;
