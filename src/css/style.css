@@ -351,3 +351,28 @@ body {
   height: 1rem;
 }
 
+
+.reward-accumulate-section {
+  margin: 10px;
+  color: black;
+  margin: 10px;
+  width: 410px;
+  height: 500px;
+  padding: 20px;
+  float: left;
+  background-color:white;
+  border-radius: 5px;  
+  border: 1px solid #2e6da4;
+}
+
+.reward-used-section {
+  color: black;
+  margin: 10px;
+  width: 410px;
+  height: 500px;
+  padding: 20px;
+  float: right;
+  background-color:white;
+  border-radius: 5px;
+  border: 1px solid #2e6da4;
+}

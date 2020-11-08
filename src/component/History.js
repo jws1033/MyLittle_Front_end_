@@ -56,7 +56,7 @@ export default function History({match}) {
             <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
           </div>
           <br></br>
-            <h3>History</h3>
+            <h2>History</h2>
             <br></br><br />
               <div className="history-form" >                     
                   <div style={{ fontSize: "20px"}}>

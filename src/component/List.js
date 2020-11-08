@@ -50,7 +50,7 @@ export default function List() {
               <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
             </div>
             <br></br>
-              <h3>History</h3>
+              <h2>History</h2>
               <br></br>
               <div style={{justifyContent:'flex-start', display:'flex',  flexWrap:'wrap'}}>
                 {historyList.map((survey)=>{
