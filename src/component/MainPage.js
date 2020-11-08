@@ -139,9 +139,10 @@ export default function MainPage() {
 
       <div className="section" style={{ marginTop: "100px" }}>
         <div className="header">
-          <div style={{ fontSize: " 20px "}}>
-                Q : {survey.no}
+          <div style={{ fontStyle:"bold" ,fontSize: " 20px ", color: "rgb(142 142 142)" ,  textAlign:"left" , marginLeft: "50px"}}>
+          Caregory || {survey.no}
           </div>
+          <br></br>
           {survey.questions.map(questionObj=>{
             let activeClass ='';
             if (questionObj.answer==='o'){

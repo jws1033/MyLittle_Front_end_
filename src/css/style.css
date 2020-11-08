@@ -38,13 +38,32 @@ body {
 }
 
 
-.history-section {
-  
-  font-size: 45px;
-  padding: 50px;
-  width: 400px;
-  text-align: center;
 
+.history-section {
+  background-color:#fffebb ;
+  padding: 35px;
+  font-size: 20px;
+  margin: 10px;
+  width: 300px;
+  height: 100px;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.history-section-title {
+  color: white;
+  width: 801px;
+  padding: 15px;
+  float: left;
+  margin: -40px;
+  font-size: 25px;
+  text-align: left;
+  padding-left: 35px;
+  background-color:#2e6da4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .history-form {
@@ -265,6 +284,8 @@ body {
   color: white;
 }
 
+
+
 .answer-button {
   margin: 50px;
   color: white;
@@ -327,5 +348,4 @@ body {
   width: 1rem;
   height: 1rem;
 }
-
 

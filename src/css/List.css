@@ -29,23 +29,31 @@
 
 .list-question-date{
     width: 300px;
-    margin:0
+    margin:0;
+    color: #2e6da4;
 }
 
+.list-question-date:active,
+.list-question-date:focus,
+.list-question-date:hover {
+  width: 300px;
+  margin:0;
+  background-color: #2e6da4;
+  color: white;
+  border: none;
+}
+/* 
 .btn {
-    color:black;
     border-color: transparent;
 }
 
 .btn:active,
 .btn:hover,
 .btn:focus {
-  color: white;
-  font-size: 15px;
+  color: transparent;
   background-image: linear-gradient(to left, #337ab7);
-  cursor: pointer;
   border-radius: 10px;
   border-color: transparent;
   background-size: 200%;
   background-position: right;
-}
+} */
