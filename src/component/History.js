@@ -57,13 +57,13 @@ export default function History({match}) {
           </div>
           <br></br>
             <h3>History</h3>
-            <br></br>
+            <br></br><br />
               <div className="history-form" >                     
                   <div style={{ fontSize: "20px"}}>
                   <div className="history-section-title">
                     {survey.createAt}</div><br /><br />
                       <div style={{ textAlign: " right " , fontSize: " 15px "}}>Category > {survey.surveyNum}</div>
-                    문진 내용<br/><br />
+                    <div style={{ fontSize: "18px"}}>Content</div><br/>
                     {survey.answer.map((answer, index) => {return <div>{index+1}. {answer.question} {answer.result}</div> })}
                   </div>
               </div>
