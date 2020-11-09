@@ -1,9 +1,14 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useHistory } from "react-router-dom";
 
 import "../css/style.css";
 
 export default function History({ match }) {
+  const history = useHistory()
+  const [user, setUser] = React.useState({
+    sender : sessionStorage.getItem('account'),
+  });
   const [survey, setSurvey] = React.useState({
     createAt : "",
     surveyNum : "",
@@ -23,7 +28,6 @@ export default function History({ match }) {
       .then((data)=>{
         const surveyQuestion = data.result.surveyQuestion
         const surveyResult = data.result.surveyResult
-
         let answers = new Array()
 
         for(let i = 0; i < surveyQuestion.length; i++){
@@ -44,6 +48,30 @@ export default function History({ match }) {
         alert("에러")
       });
 },[match.params.id])
+
+React.useEffect(() => {
+  fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+    .then((res) => {
+      if (res.status === 200) {
+        return res.json();
+      } else if (res.status === 401){
+        alert("등록해주세요")
+        history.push('/Register')
+      }
+    })
+    .then((user) => {
+      setUser(user)
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("등록을 누르세요")
+    });
+},[history]);
 
   return (
     <div>

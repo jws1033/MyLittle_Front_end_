@@ -1,9 +1,39 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useHistory } from "react-router-dom";
 
 import "../css/style.css";
 
 export default function Reward() {
+  const history = useHistory()
+  const [user, setUser] = React.useState({
+    sender : sessionStorage.getItem('account'),
+  });
+
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        } else if (res.status === 401){
+          alert("등록해주세요")
+          history.push('/Register')
+        }
+      })
+      .then((user) => {
+        setUser(user)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("등록을 누르세요")
+      });
+  },[history]);
+
   return (
     <div>
       <Navbar />

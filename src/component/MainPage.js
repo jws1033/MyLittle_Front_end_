@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
@@ -8,6 +8,9 @@ import "../css/style.css";
 
 export default function MainPage() {
   const history = useHistory()
+  const [user, setUser] = useState({
+    sender : sessionStorage.getItem('account'),
+  });
   const [survey, setSurvey] = React.useState( {
     no:"",
     questions:[{
@@ -31,23 +34,6 @@ export default function MainPage() {
       "answer": null
     }]
   })
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          return res.json();
-        } else if (res.status === 401){
-          alert("로그인해주세요")
-          history.push('/')
-        }
-      })
-  },[history]);
 
   const handleSubmit = React.useCallback(async function(e){
     e.preventDefault()
@@ -118,6 +104,30 @@ export default function MainPage() {
         alert("에러")
       });
   },[])
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/user/userfind?sender=${sessionStorage.getItem('account')}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        } else if (res.status === 401){
+          alert("등록해주세요")
+          history.push('/Register')
+        }
+      })
+      .then((user) => {
+        setUser(user)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("등록을 누르세요")
+      });
+  },[history]);
 
   return (
     <div>

@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "../css/Navbar.css"
 
 export default function Navbar({ title }) {
+  const history = useHistory()
   const [user, setUser] = useState({
     sender : sessionStorage.getItem('account'),
   });
@@ -15,13 +16,7 @@ export default function Navbar({ title }) {
         "Content-Type": "application/json"
       },
     })
-      .then((res) => {
-        if (res.status === 200) {
-          return res.json();
-        } else if (res.status === 401){
-          alert("로그인해주세요")
-        }
-      })
+      .then(res => res.json())
       .then((user) => {
         setUser(user)
       })
@@ -29,7 +24,7 @@ export default function Navbar({ title }) {
         console.log(err);
         alert("등록을 누르세요")
       });
-  },[]);
+  },[history]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light bg-dark">
@@ -60,10 +55,9 @@ export default function Navbar({ title }) {
                 <li><Link to="/Reward">리워드</Link></li>
                 <li><Link to="/MyPage">마이페이지</Link></li>
                 <li>
-                    <strong>{user.name}</strong>님
-                    반갑습니다!
+                  <strong>{user.name}</strong>님 반갑습니다!
                 </li>
-                <li><Link to="/" onClick={() => {{sessionStorage.removeItem("account")}}}>로그아웃</Link></li>
+                <li><Link to="/" onClick={() => {sessionStorage.removeItem("account")}}>로그아웃</Link></li>
               </ul>
             </div>
           </div>

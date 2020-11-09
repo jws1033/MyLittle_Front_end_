@@ -25,8 +25,8 @@ const MyPage = () => {
         if (res.status === 200) {
           return res.json();
         } else if (res.status === 401){
-          alert("로그인해주세요")
-          history.push('/')
+          alert("등록해주세요")
+          history.push('/Register')
         }
       })
       .then((user) => {
@@ -130,6 +130,7 @@ const MyPage = () => {
             const result = window.confirm("정말 삭제?")
             
             if(result) {
+              {sessionStorage.removeItem("account")}
               onDelete()
             } 
           }}>

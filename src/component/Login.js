@@ -43,7 +43,7 @@ const Login = ({ history }) => {
           history.push('/MainPage')
         }
         else if (status === 401){
-          history.push('/MyPage')
+          history.push('/Register')
         }
       
     } else {
