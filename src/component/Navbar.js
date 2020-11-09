@@ -60,8 +60,10 @@ export default function Navbar({ title }) {
                 <li><Link to="/Reward">리워드</Link></li>
                 <li><Link to="/MyPage">마이페이지</Link></li>
                 <li>
+                  <a>
                     <strong>{user.name}</strong>님
                     반갑습니다!
+                  </a>
                 </li>
                 <li><Link to="/" onClick={() => {{sessionStorage.removeItem("account")}}}>로그아웃</Link></li>
               </ul>

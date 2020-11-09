@@ -115,7 +115,9 @@ body {
 }
 
 .newitem-form {
-  width: 50%;
+  max-width: 400px;
+  position: relative;
+  width: 400px;
   padding: 10px 25px;
   margin-bottom: 20px;
 }
@@ -123,6 +125,19 @@ body {
 .newitem-btn {
   padding: 10px 25px;
   width: 10%;
+}
+
+.fixinput-cm {
+  position:absolute;
+  right: 245px;
+  top: 615px;
+}
+
+
+.fixinput-kg {
+  position:absolute;
+  right: 245px;
+  top: 680px;
 }
 
 .show-section {
