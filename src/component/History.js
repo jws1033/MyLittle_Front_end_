@@ -48,7 +48,7 @@ export default function History({ match }) {
   return (
     <div>
       <Navbar />
-      
+
       <div className="section">
         <div>
           <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
@@ -59,7 +59,7 @@ export default function History({ match }) {
                   <div className="history-section-title">
                     {survey.createAt}
                   </div><br /><br />
-                  <div style={{ textAlign: " right " , fontSize: " 15px "}}>Category > {survey.surveyNum}</div>
+                  <div style={{ textAlign: " right " , fontSize: " 15px "}}>Category{survey.surveyNum}</div>
                   <div style={{ fontSize: "18px"}}>Content</div>
                   <br/>
                   {survey.answer.map((answer, index) => {return <div>{index+1}. {answer.question} {answer.result}</div> })}
