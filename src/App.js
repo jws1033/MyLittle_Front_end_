@@ -1,19 +1,17 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import logo from "./logo.svg";
-import "./App.css";
 
 import MainPage from "./component/MainPage";
-import Logout from "./component/Logout";
 import FirstPage from "./component/FirstPage";
-import PatientLogin from "./component/PatientLogin";
+import Login from "./component/Login";
 
 import History from "./component/History";
-import MyOwnPage from "./component/MyOwnPage";
 import MyPage from "./component/MyPage";
+import Register from "./component/Register";
 import List from "./component/List";
 import Reward from "./component/Reward";
-import ShowPatient from "./component/ShowPatient";
+
+import "./css/App.css";
 
 const App = () => {
   return (
@@ -21,14 +19,12 @@ const App = () => {
       <Route exact path="/" component={FirstPage} />
       
       <Route path="/History/:id" component={History} />
-      <Route path="/MyOwnPage" component={MyOwnPage} />
-      <Route path="/Logout" component={Logout} />
-      <Route path="/MainPage" component={MainPage} />
-      <Route path="/PatientLogin" component={PatientLogin} />
       <Route path="/MyPage" component={MyPage} />
+      <Route path="/MainPage" component={MainPage} />
+      <Route path="/Login" component={Login} />
+      <Route path="/Register" component={Register} />
       <Route path="/List" component={List} />
       <Route path="/Reward" component={Reward} />
-      <Route path="/ShowPatient" component={ShowPatient} />
     </div>
   );
 };

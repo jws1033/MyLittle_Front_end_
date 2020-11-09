@@ -1,19 +1,16 @@
-import React, { Component } from "react";
-import "../css/style.css";
-import { Button, Container, Form } from "react-bootstrap";
+import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
 import Navbar from "./Navbar";
 
-import {Link} from 'react-router-dom';
-
+import "../css/style.css";
 import "../css/List.css"
 
-
 export default function List() {
-
   const [historyList, setHistoryList] = React.useState([])
 
-
-  React.useEffect(()=>{
+  React.useEffect(() => {
     fetch(`http://localhost:3001/api/survey/surveylist?sender=${sessionStorage.getItem('account')}`, {
       method: "GET",
       headers: {
@@ -30,7 +27,6 @@ export default function List() {
       })
       .then(data=>{
         setHistoryList(data.result)
-        console.log(data)
       })
       .catch((err) => {
         console.log(err);
@@ -38,40 +34,32 @@ export default function List() {
       });
   },[])
 
-    return (
-      <div>
+  return (
+    <div>
+      <Navbar />
+      <div className="section custom-section">
         <div>
-          <Navbar />
-        
+          <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
         </div>
-        
-        <div className="section custom-section">
-            <div>
-              <img src="https://www.flaticon.com/svg/static/icons/svg/2521/2521614.svg" width="90px"></img>
-            </div>
-            <br></br>
-              <h2>History</h2>
-              <br></br>
-              <div style={{justifyContent:'flex-start', display:'flex',  flexWrap:'wrap'}}>
-                {historyList.map((survey)=>{
-                  return (
-                    <div className="list-section list-question-section">
-                      <Link to={`/History/${survey[0]}`}>
-                        <Button className="list-form  list-question-date">
-                          <div>
-                            {survey[0]}
-                          {/* 날짜 데이터 */} 문진<br></br>
-                          </div>
-                        </Button>
-                      </Link>
-                   </div>
-                  )
-                })}
-            </div>
+        <br /><h2>History</h2><br />
+          <div style={{justifyContent:'flex-start', display:'flex',  flexWrap:'wrap'}}>
+            {historyList.map((survey)=>{
+              return (
+                <div className="list-section list-question-section">
+                  <Link to={`/History/${survey[0]}`}>
+                    <Button className="list-form  list-question-date">
+                      <div>
+                        {survey[0]}문진<br></br>
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+              )
+            })}
         </div>
       </div>
-    );
-  
+    </div>
+  );
 }
 
 

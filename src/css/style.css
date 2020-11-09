@@ -96,15 +96,6 @@ body {
   height: 450px;
 }
 
-.card .card-image {
-  top: 0;
-  height: 120px;
-  width: auto;
-  background-position-y: 50%;
-  background-image: url("../images/kakao.jpg");
-  background-size: auto;
-}
-
 .card-title {
   margin-top: 20px;
   margin-left: 20px;
