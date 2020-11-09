@@ -8,6 +8,7 @@ import "../css/style.css";
 
 export default function MainPage() {
   const history = useHistory()
+  const [historyList, setHistoryList] = React.useState([])
   const [user, setUser] = useState({
     sender : sessionStorage.getItem('account'),
   });
@@ -126,6 +127,28 @@ export default function MainPage() {
       .catch((err) => {
         console.log(err);
         alert("등록을 누르세요")
+      });
+  },[history]);
+
+  React.useEffect(() => {
+    fetch(`http://localhost:3001/api/survey/surveyfind?sender=${sessionStorage.getItem('account')}&createAt=${new Date().toISOString().substring(0, 10)}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          history.push(`/History/${new Date().toISOString().substring(0, 10)}`)
+        } else if (res.status === 401){
+          return res.json();
+        }
+      })
+      .then((user) => {
+        setUser(user)
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },[history]);
 

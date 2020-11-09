@@ -147,7 +147,6 @@ const Register = () => {
               placeholder="키를 입력해 주세요"
               onChange={handleChange}
             />
-            <span className="fixinput-cm">cm</span>
             </div>
             <div>
             <input
@@ -158,7 +157,6 @@ const Register = () => {
               placeholder="몸무게를 입력해 주세요"
               onChange={handleChange} 
             />
-            <span className="fixinput-kg">kg</span>
             </div>
             <Button variant="primary" type="submit" className="submit-button" >
               {action==='edit'? '수정' : '등록'}

@@ -77,7 +77,7 @@ export default function List() {
                   <Link to={`/History/${survey[0]}`}>
                     <Button className="list-form  list-question-date">
                       <div>
-                        {survey[0]}문진<br></br>
+                        {survey[0]} 문진<br></br>
                       </div>
                     </Button>
                   </Link>
