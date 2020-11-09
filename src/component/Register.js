@@ -117,15 +117,17 @@ const Register = () => {
               <option value="여">여</option>
             </select>
             <br />
-            <input
-              type="text"
-              className="newitem-form"
-              value={user.age}
-              name="age"
-              placeholder="나이를 입력해 주세요"
-              onChange={handleChange}
-            />
-            <br />
+            <div style={{position:'relative'}}>
+              <input
+                type="text"
+                className="newitem-form"
+                value={user.age}
+                name="age"
+                placeholder="나이를 입력해 주세요"
+                onChange={handleChange}
+              />
+    
+            </div>
             <input
               type="text"
               className="newitem-form"
@@ -135,24 +137,29 @@ const Register = () => {
               onChange={handleChange}
             />
             <br />
+            <div>
             <input
               type="text"
+              size="380px"
               className="newitem-form"
               value={user.height}
               name="height"
               placeholder="키를 입력해 주세요"
               onChange={handleChange}
             />
-            <br />
+            <span className="fixinput-cm">cm</span>
+            </div>
+            <div>
             <input
               type="text"
               className="newitem-form"
               value={user.weight}
               name="weight"
               placeholder="몸무게를 입력해 주세요"
-              onChange={handleChange}
+              onChange={handleChange} 
             />
-            <br />
+            <span className="fixinput-kg">kg</span>
+            </div>
             <Button variant="primary" type="submit" className="submit-button" >
               {action==='edit'? '수정' : '등록'}
             </Button>

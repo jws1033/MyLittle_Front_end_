@@ -237,15 +237,17 @@ form .signup-link a:hover {
 .delete-info {
   width: 200px;
   color: white;
+  padding: 10px;
   background-image: linear-gradient(to right, #fb2a2a, #ea3701);
   border-radius: 10px;
   border: none;
+  padding: 15px;
 }
 
 .delete-info:active,
 .delete-info:hover,
 .delete-info:focus {
-  background-image: linear-gradient(to left,#fb2a2a, #ea3701);
+  background-image: linear-gradient(to left,#d40000, #ea3701);
   cursor: pointer;
   border-radius: 10px;
   background-size: 200%;
@@ -265,7 +267,7 @@ form .signup-link a:hover {
 .modify-info:active,
 .modify-info:hover,
 .modify-info:focus {
-  background-image: linear-gradient(to left,#fbd52a, #ead301);
+  background-image: linear-gradient(to left,#e7be07, #ead301);
   cursor: pointer;
   border-radius: 10px;
   background-size: 200%;

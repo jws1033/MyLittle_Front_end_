@@ -107,7 +107,7 @@ const MyPage = () => {
           </div>
           <br />
           <div style={{ fontSize: " 20px "}}>
-              나이 :{user.age}
+              나이 :{user.age} 살
           </div>
           <br />
           <div style={{ fontSize: " 20px "}}>
@@ -116,11 +116,11 @@ const MyPage = () => {
 
           <br />
           <div style={{ fontSize: " 20px "}}>
-              키 :{user.height}
+              키 :{user.height} cm
           </div>
           <br />
           <div style={{ fontSize: " 20px "}}>
-              몸무게: {user.weight}
+              몸무게: {user.weight} kg
           </div>
         </form>
       </div>
@@ -134,11 +134,11 @@ const MyPage = () => {
               onDelete()
             } 
           }}>
-            <h2 style={{ fontSize: "15px"}}>내 정보 삭제</h2>
+            <div style={{ fontSize: "15px"}}>내 정보 삭제</div>
           </Button>
           {loaded? (
           <Button className="modify-info" style={{ margin: "10px" }} onClick={()=> history.push("/Register")}>
-            <h2 style={{ fontSize: "15px" }}>{action === 'edit'? '수정' : '등록'}</h2>
+            <div style={{ fontSize: "15px" }}>{action === 'edit'? '수정' : '등록'}</div>
           </Button>): <Spinner animation="grow" />}
         </div>
       </div>
